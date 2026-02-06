@@ -1,0 +1,21 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual env
+.venv/
+venv/
+
+# Generated videos
+downloads/
+temp_vlog_*.mp4
+part1.mp4
+part2.mp4
+part3.mp4
+
+# Personal video
+my_video.mp4
+
+# OS files
+.DS_Store
+Thumbs.db
