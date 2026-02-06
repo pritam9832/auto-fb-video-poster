@@ -12,9 +12,9 @@ DOWNLOAD_DIR = "downloads"
 MY_VIDEO = "my_video.mp4"
 
 PAGE_ID = "171507192718897"
-PAGE_ACCESS_TOKEN = "EAAIrluc72OcBQudTZBkV8HBWbGUy1Dx7WQXoToy8YZA6mVZAcdSCsYrXbanT7YkH0xAJOeMK59ctgZCLuAOGTxYb56TMr1eIE6iI5ZCXNZBuw1aZABUnZBRUD8MZCxeCVWIvPXwsxbrLhNIuSZC8ED4CN2FMli3sg81MsWuqdZCMg7UcOZBnTlXnEYFd46dtZAx705sZBZAydYZD"
+PAGE_ACCESS_TOKEN = os.getenv("PAGE_ACCESS_TOKEN")
 
-FFMPEG = r"C:\Users\palso\ffmpeg-2026-02-02-git-7e9fe341df-full_build\ffmpeg-2026-02-02-git-7e9fe341df-full_build\bin\ffmpeg.exe"
+FFMPEG = "ffmpeg"
 # =========================================
 
 
@@ -73,7 +73,7 @@ def create_parts():
 def upload_to_facebook(video_path, caption):
     print(f"\n⬆️ Uploading {video_path}")
 
-    url = f"https://graph.facebook.com/v24.0/{171507192718897}/videos"
+ url = f"https://graph.facebook.com/v24.0/{PAGE_ID}/videos"
     params = {
         "access_token": PAGE_ACCESS_TOKEN,
         "description": caption
@@ -132,3 +132,4 @@ if __name__ == "__main__":
     cleanup()
 
     print("\n🎉 ALL DONE — 3 PARTS UPLOADED & STORAGE CLEAN 🎉")
+
